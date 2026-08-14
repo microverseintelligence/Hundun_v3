@@ -1,0 +1,10 @@
+[project]
+name = "hundun"
+version = "3.2.0"
+description = "Hundun v3.2 — Hardened Adaptive Deliberation & Self-Improvement Layer"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
