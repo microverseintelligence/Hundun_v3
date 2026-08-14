@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hundun.v3/schemas/DecisionFrame.json",
+  "title": "DecisionFrame",
+  "type": "object",
+  "required": [
+    "frame_id",
+    "request_id",
+    "status",
+    "frame_level",
+    "decision_target",
+    "causal_object",
+    "objective",
+    "constraints",
+    "rejected_surface_problem",
+    "success_criteria",
+    "required_decision_scope",
+    "snapshot_id"
+  ],
+  "properties": {
+    "frame_id": { "type": "string" },
+    "request_id": { "type": "string" },
+    "status": { "enum": ["DRAFT", "VALIDATING", "COMMITTED", "SUPERSEDED"] },
+    "frame_level": { "enum": ["L0", "L1", "L2", "L3", "L4", "L5"] },
+    "decision_target": { "type": "string", "minLength": 1 },
+    "causal_object": { "type": "string", "minLength": 1 },
+    "objective": { "type": "string", "minLength": 1 },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "rejected_surface_problem": { "type": "string" },
+    "success_criteria": { "type": "array", "items": { "type": "string" } },
+    "required_decision_scope": { "type": "string" },
+    "strongest_counterargument": { "type": "string" },
+    "frame_transition": { "type": "object" },
+    "remaining_uncertainty": { "type": "array" },
+    "snapshot_id": { "type": "string" },
+    "provenance": { "type": "object" }
+  },
+  "additionalProperties": false
+}
